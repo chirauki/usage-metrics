@@ -25,7 +25,6 @@ gmail = Gmail.new(opts[:gmail_user], opts[:gmail_pass])
 mailbox = gmail.mailbox(opts[:label])
 uids = mailbox.fetch_uids
 uids.each do |uid|
-  binding.pry
   gmail_email = Gmail::Message.new(mailbox, uid)
   mail = gmail_email.message
   subj = mail.subject
